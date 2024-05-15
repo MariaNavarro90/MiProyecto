@@ -18,12 +18,16 @@ from django.contrib import admin
 from django.urls import path
 from MiProyecto.views import bienvenida, bienvenida2
 from MiProyecto.views import categoriaEdad, obtenerMomentoActual
+from MiProyecto.views import contenidoHTML
+from MiProyecto.views import miPrimerPlantilla
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenida/', bienvenida),
     path('bienvenida2/', bienvenida2),
     path('categoriaEdad/<int:edad>', categoriaEdad),
-    path('obtenerMomentoActual/', obtenerMomentoActual)
+    path('obtenerMomentoActual/', obtenerMomentoActual),
+    path('contenidoHTML/<nombre>/<int:edad>', contenidoHTML),
+    path('miPrimerPlantilla/', miPrimerPlantilla)
 ]
-
