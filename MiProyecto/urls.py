@@ -20,6 +20,7 @@ from MiProyecto.views import bienvenida, bienvenida2
 from MiProyecto.views import categoriaEdad, obtenerMomentoActual
 from MiProyecto.views import contenidoHTML
 from MiProyecto.views import miPrimerPlantilla
+from MiProyecto.views import plantillaParametros
 
 
 urlpatterns = [
@@ -29,5 +30,6 @@ urlpatterns = [
     path('categoriaEdad/<int:edad>', categoriaEdad),
     path('obtenerMomentoActual/', obtenerMomentoActual),
     path('contenidoHTML/<nombre>/<int:edad>', contenidoHTML),
-    path('miPrimerPlantilla/', miPrimerPlantilla)
+    path('miPrimerPlantilla/', miPrimerPlantilla),
+    path('plantillaParametros/', plantillaParametros)
 ]

@@ -61,24 +61,46 @@ def contenidoHTML(request, nombre, edad):
     """ % (nombre, edad)
     return HttpResponse(contenido)
 
-from django.http import HttpResponse
-from django.template import Template, Context
 
 def miPrimerPlantilla(request):
     # Abres el archivo "miPrimerPlantilla.html" ubicado en la ruta especificada.
-    plantillaExterna = open("C:/Users/Navar/OneDrive/CAPACITACIONES 2024/DJANGO_TRABAJO/MiProyecto/MiProyecto/plantillas/miPrimerPlantilla.html")
-    
+    plantillaExterna = open(
+        "C:/Users/Navar/OneDrive/CAPACITACIONES 2024/DJANGO_TRABAJO/MiProyecto/MiProyecto/plantillas/miPrimerPlantilla.html")
+
     # Lees el contenido del archivo y lo asignas a una variable `template`.
     template = Template(plantillaExterna.read())
-    
+
     # Cierras el archivo después de leerlo.
     plantillaExterna.close()
-    
+
     # Creas un contexto vacío.
     contexto = Context()
-    
+
     # Renderizas la plantilla con el contexto creado.
     documento = template.render(contexto)
-    
+
     # Devuelves una respuesta HTTP con el contenido renderizado de la plantilla.
     return HttpResponse(documento)
+
+def plantillaParametros(request):
+    nombre = "vicky Navarro"
+    fechaActual = datetime.datetime.now()
+    # Abres el archivo "miPrimerPlantilla.html" ubicado en la ruta especificada.
+    plantillaExterna = open(
+        "C:/Users/Navar/OneDrive/CAPACITACIONES 2024/DJANGO_TRABAJO/MiProyecto/MiProyecto/plantillas/plantillaParametros.html")
+
+    # Lees el contenido del archivo y lo asignas a una variable `template`.
+    template = Template(plantillaExterna.read())
+
+    # Cierras el archivo después de leerlo.
+    plantillaExterna.close()
+
+    # Agrego parametros a mi context antes vacio a travez de un diccionario.
+    contexto = Context({"nombreCanal": nombre, "fechaActual": fechaActual})
+
+    # Renderizas la plantilla con el contexto creado.
+    documento = template.render(contexto)
+
+    # Devuelves una respuesta HTTP con el contenido renderizado de la plantilla.
+    return HttpResponse(documento)
+
