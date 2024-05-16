@@ -85,6 +85,7 @@ def miPrimerPlantilla(request):
 def plantillaParametros(request):
     nombre = "vicky Navarro"
     fechaActual = datetime.datetime.now()
+    lenguajes = {"Python","Ruby","JavaScript","Java","C#"}
     # Abres el archivo "miPrimerPlantilla.html" ubicado en la ruta especificada.
     plantillaExterna = open(
         "C:/Users/Navar/OneDrive/CAPACITACIONES 2024/DJANGO_TRABAJO/MiProyecto/MiProyecto/plantillas/plantillaParametros.html")
@@ -96,7 +97,7 @@ def plantillaParametros(request):
     plantillaExterna.close()
 
     # Agrego parametros a mi context antes vacio a travez de un diccionario.
-    contexto = Context({"nombreCanal": nombre, "fechaActual": fechaActual})
+    contexto = Context({"nombreCanal": nombre, "fechaActual": fechaActual, "lenguajes": lenguajes})
 
     # Renderizas la plantilla con el contexto creado.
     documento = template.render(contexto)

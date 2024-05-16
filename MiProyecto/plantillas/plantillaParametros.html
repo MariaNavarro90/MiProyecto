@@ -6,6 +6,15 @@
     <body>
         <h1> nombre del canal: {{nombreCanal}}</h1>
         <h2>Fecha actual: Dia: {{fechaActual.day}} Mes: {{fechaActual.month}}</h2>
+        <ul>
+            {% for leng in lenguajes %}
+                {% if leng == 'Python' %}
+                    <li style= "color: red;">{{leng}}</li>
+                {% else %}
+                    <li>{{leng}}</li>
+                {% endif %}
+                {% endfor %}
+        </ul>
     </body>
     
 </html>
