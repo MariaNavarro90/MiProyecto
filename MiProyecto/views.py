@@ -120,3 +120,9 @@ def plantillaShortCut(request):
     fechaActual = datetime.datetime.now()
     lenguajes = {"Python","Ruby","JavaScript","C++","Java","C#"}
     return render(request, 'plantillaParametros.html', {"nombreCanal": nombre, "fechaActual": fechaActual, "lenguajes": lenguajes})
+
+def plantillaHija1(request):
+    return render(request, "plantillaHija1.html", {})
+
+def plantillaHija2(request):
+    return render(request, "plantillaHija2.html", {})

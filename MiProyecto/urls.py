@@ -23,8 +23,8 @@ from MiProyecto.views import miPrimerPlantilla
 from MiProyecto.views import plantillaParametros
 from MiProyecto.views import plantillaCargador
 from MiProyecto.views import plantillaShortCut
-
-
+from MiProyecto.views import plantillaHija1
+from MiProyecto.views import plantillaHija2
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenida/', bienvenida),
@@ -35,5 +35,7 @@ urlpatterns = [
     path('miPrimerPlantilla/', miPrimerPlantilla),
     path('plantillaParametros/', plantillaParametros),
     path('plantillaCargador/', plantillaCargador),
-    path('plantillaShortCut/', plantillaShortCut)
+    path('plantillaShortCut/', plantillaShortCut),
+    path('plantillaHija1/', plantillaHija1),
+    path('plantillaHija2/', plantillaHija2)
 ]
