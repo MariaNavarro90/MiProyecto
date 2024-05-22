@@ -21,6 +21,8 @@ from MiProyecto.views import categoriaEdad, obtenerMomentoActual
 from MiProyecto.views import contenidoHTML
 from MiProyecto.views import miPrimerPlantilla
 from MiProyecto.views import plantillaParametros
+from MiProyecto.views import plantillaCargador
+from MiProyecto.views import plantillaShortCut
 
 
 urlpatterns = [
@@ -31,5 +33,7 @@ urlpatterns = [
     path('obtenerMomentoActual/', obtenerMomentoActual),
     path('contenidoHTML/<nombre>/<int:edad>', contenidoHTML),
     path('miPrimerPlantilla/', miPrimerPlantilla),
-    path('plantillaParametros/', plantillaParametros)
+    path('plantillaParametros/', plantillaParametros),
+    path('plantillaCargador/', plantillaCargador),
+    path('plantillaShortCut/', plantillaShortCut)
 ]

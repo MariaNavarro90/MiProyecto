@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
+from django.template.loader import get_template
+from django.shortcuts import render
 
 # Request: Para realizar peticiones.
 # HttpResponse: Para enviar la respuesta usando el protocolo HTTP.
@@ -105,3 +107,16 @@ def plantillaParametros(request):
     # Devuelves una respuesta HTTP con el contenido renderizado de la plantilla.
     return HttpResponse(documento)
 
+def plantillaCargador(request):
+    nombre = "vicky Navarro"
+    fechaActual = datetime.datetime.now()
+    lenguajes = {"Python","Ruby","JavaScript","Java","C#"}
+    plantillaExterna = get_template('plantillaParametros.html')
+    documento =  plantillaExterna.render({"nombreCanal": nombre, "fechaActual": fechaActual, "lenguajes": lenguajes})
+    return HttpResponse(documento)
+
+def plantillaShortCut(request):
+    nombre = "vicky Navarro"
+    fechaActual = datetime.datetime.now()
+    lenguajes = {"Python","Ruby","JavaScript","C++","Java","C#"}
+    return render(request, 'plantillaParametros.html', {"nombreCanal": nombre, "fechaActual": fechaActual, "lenguajes": lenguajes})

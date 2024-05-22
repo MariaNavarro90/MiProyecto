@@ -1,20 +1,33 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Plantillas que recibe parametros</title>
+        <meta charset="UTF-8"> <!-- Establece la codificación de caracteres a UTF-8 -->
+        <title>Plantillas que recibe parámetros</title> <!-- Título de la página -->
+        <style type="text/css">
+            li {
+                color: blue; 
+            }
+        </style>
     </head>
     <body>
-        <h1> nombre del canal: {{nombreCanal}}</h1>
-        <h2>Fecha actual: Dia: {{fechaActual.day}} Mes: {{fechaActual.month}}</h2>
+        <!-- Muestra el nombre del canal -->
+        <h1>nombre del canal: {{nombreCanal}}</h1> 
+        <!-- Muestra la fecha actual desglosada en día, mes y año -->
+        <h2>Fecha actual: {{fechaActual.day}} / {{fechaActual.month}} / {{fechaActual.year}}</h2>
+        <!-- Muestra el número de lenguajes utilizando el filtro length -->
+        <h3>N° de lenguajes: {{lenguajes|length}}</h3>
         <ul>
-            {% for leng in lenguajes %}
-                {% if leng == 'Python' %}
-                    <li style= "color: red;">{{leng}}</li>
-                {% else %}
-                    <li>{{leng}}</li>
-                {% endif %}
-                {% endfor %}
+            <!-- Bucle for que itera sobre cada elemento en la lista de lenguajes -->
+            {% for leng in lenguajes %} 
+                <!-- Condición que verifica si el lenguaje es 'Python' -->
+                {% if leng == 'Python' %} 
+                    <!-- Si el lenguaje es 'Python', se muestra en rojo -->
+                    <li style="color: red;">{{leng}}</li>
+                {% else %} <!-- Si no es 'Python' -->
+                    <!-- Muestra la primera letra del lenguaje y el nombre en minúsculas -->
+                    <li>{{leng|first}} : {{leng|lower}}</li>
+                {% endif %} <!-- Fin de la condición if -->
+            {% endfor %} <!-- Fin del bucle for -->
         </ul>
     </body>
-    
 </html>
