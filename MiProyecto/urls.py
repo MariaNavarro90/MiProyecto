@@ -25,6 +25,8 @@ from MiProyecto.views import plantillaCargador
 from MiProyecto.views import plantillaShortCut
 from MiProyecto.views import plantillaHija1
 from MiProyecto.views import plantillaHija2
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('bienvenida/', bienvenida),
@@ -39,3 +41,5 @@ urlpatterns = [
     path('plantillaHija1/', plantillaHija1),
     path('plantillaHija2/', plantillaHija2)
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

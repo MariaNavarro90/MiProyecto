@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/plantillaNavegacion.css' %}">
 </head>
 <body>
-    <h1>Vicky Navarro</h1>
+    {% include "plantillaNavegacion.html" %}
+    <h1>Vicky Navarro prueba 1</h1>
+    <img class="logo" src='{% static "imagenes/logo.jpg"%}' alt="Aca hay una img">
     {% block content %}
     
     {% endblock %}
     <p>Este es parte del pie de pagina </p>
+    <script type="text/javascript" src= '{% static "js/plantillaPadre.js" %}'></script>
 </body>
 </html>

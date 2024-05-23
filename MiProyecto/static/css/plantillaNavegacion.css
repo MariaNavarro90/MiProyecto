@@ -1,0 +1,18 @@
+#miBarra {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-transform: uppercase;
+
+}
+#miBarra li {
+    display: inline;
+    margin: 0 30px;
+    color: antiquewhite;
+    background-color: blueviolet;
+    
+}
+.logo{
+    width: 500px;
+    height: 300px;
+}
