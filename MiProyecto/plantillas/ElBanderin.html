@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title%} {% endblock %}</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/plantillaNavegacion.css' %}">
-</head>
-<body>
+    {% load static %} {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/plantillaNavegacion.css' %}"
+    />
+  </head>
+  <body>
     {% include "plantillaNavegacion.html" %}
-    <h1>Escuela de futbol mixto.</h1>
-    <img class="logo" src='{% static "imagenes/Banderin.jpg"%}' alt="Aca hay una img">
-    {% block content %}
-    
-    {% endblock %}
-    <p>Este es parte del pie de pagina </p>
-    <script type="text/javascript" src= '{% static "js/plantillaPadre.js" %}'></script>
-</body>
+    <div class="content">
+      <h1>Escuela de futbol mixto.</h1>
+      <img
+        class="logo"
+        src='{% static "imagenes/Banderin.jpg"%}'
+        alt="Aca hay una img"
+      />
+      {% block content %} {% endblock %}
+      <p>Este es parte del pie de pagina</p>
+    </div>
+    <script
+      type="text/javascript"
+      src='{% static "js/plantillaPadre.js" %}'
+    ></script>
+  </body>
 </html>

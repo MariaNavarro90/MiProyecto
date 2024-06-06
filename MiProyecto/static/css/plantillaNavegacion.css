@@ -1,18 +1,37 @@
-#miBarra {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
+.content{
+    padding-top: 3em;
+}
+.bg-dark{
+    background-color: #333333;
+}
+.nav-link{
     text-transform: uppercase;
+}
+.nav-link, .nav-link:focus{
+    color: #ffffcc;
+}
+.nav-link:hover{
+    color: #cc6666;
+}
+.dropdown-menu{
+    background-color: #ffffcc;
+}
+.dropdown-item{
+    color: #333333;
+}
+.dropdown-item:hover{
+    background-color: #cc6666;
+    color: #ffffcc;
+}
+.dropdown-item:active{
+    color: #ffffcc;
+    background-color: #333333;
+}
 
+.logo{
+    width: 3.5em;
+    height: 3.5em;
 }
-#miBarra li {
-    display: inline;
-    margin: 0 30px;
-    color: antiquewhite;
-    background-color: blueviolet;
-    
-}
-.logo{}
 
 .listaMain{
     font-weight: bold;

@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
-<body>
-    <ul id="miBarra">
-        <li>El Banderin</li>
-        <li>Treinos y partidos</li>
-        <li>Coacheo de equipos</li>
-        <li>Contacto</li>
-        <li>Acerca de</li>
-    </ul>
-    
-</body>
+    {% load static %}
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="rounded-circle shadow logo" src='{% static "imagenes/Banderin.jpg"%}' alt="Aca hay una img"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">El Banderin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Coacheo de Equipo</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Treinos y Partidos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">F5 nivel inicial</a></li>
+                  <li><a class="dropdown-item" href="#">F5 nivel intermedio</a></li>
+                  <li><a class="dropdown-item" href="#">F5 nivel avanzado</a></li>
+                  <li><a class="dropdown-item" href="#">F5 Mixto</a></li>
+                  <li><a class="dropdown-item" href="#">F7 full partido</a></li>
+                  <li><a class="dropdown-item" href="#">F8 treino y full partido</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </body>
 </html>
