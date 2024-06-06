@@ -12,7 +12,9 @@
     background-color: blueviolet;
     
 }
-.logo{
-    width: 500px;
-    height: 300px;
+.logo{}
+
+.listaMain{
+    font-weight: bold;
+    font-family: sans-serif;
 }

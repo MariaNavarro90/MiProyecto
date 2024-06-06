@@ -11,24 +11,7 @@ Proporciona una función de bienvenida simple, una función para mostrar un mens
 bienvenida con estilo en rojo, una función para determinar la categoría de edad y una 
 función para mostrar la hora y fecha actuales."""
 
-# Esto es una vista:
-# Esta función devuelve una respuesta HTTP simple con el mensaje "Bienvenidos Hola Mundo."
-
-
-def bienvenida(request):
-    return HttpResponse("Bienvenidos Hola Mundo.")
-
-# Esta función devuelve una respuesta HTTP con un mensaje en rojo "Bienvenidos Hola Mundo2."
-
-
-def bienvenida2(request):
-    return HttpResponse("<p style='color: red;'>Bienvenidos Hola Mundo2.</p>")
-
-# Esta función determina la categoría de edad basada en el parámetro de edad recibido.
-# Luego, devuelve una respuesta HTTP con la categoría de edad.
-
-
-def categoriaEdad(resquest, edad):
+"""def categoriaEdad(resquest, edad):
     if edad >= 18:
         if edad >= 60:
             categoria = "Tercera Edad"
@@ -50,7 +33,7 @@ def obtenerMomentoActual(request):
     ahora = datetime.datetime.now()
     respuestaFormateada = respuesta.format(
         ahora.strftime("%A %d %m %Y %H:%M:%S"))
-    return HttpResponse(respuestaFormateada)
+    return HttpResponse(respuestaFormateada)"""
 
 
 def contenidoHTML(request, nombre, edad):
@@ -121,8 +104,11 @@ def plantillaShortCut(request):
     lenguajes = {"Python","Ruby","JavaScript","C++","Java","C#"}
     return render(request, 'plantillaParametros.html', {"nombreCanal": nombre, "fechaActual": fechaActual, "lenguajes": lenguajes})
 
-def plantillaHija1(request):
-    return render(request, "plantillaHija1.html", {})
+def TreinosPartidos(request):
+    return render(request, "TreinosPartidos.html", {})
 
-def plantillaHija2(request):
-    return render(request, "plantillaHija2.html", {})
+def coacheoEquipos(request):
+    return render(request, "coacheoEquipos.html", {})
+
+def main(request):
+    return render(request, "main.html", {})

@@ -16,30 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from MiProyecto.views import bienvenida, bienvenida2
-from MiProyecto.views import categoriaEdad, obtenerMomentoActual
 from MiProyecto.views import contenidoHTML
-from MiProyecto.views import miPrimerPlantilla
-from MiProyecto.views import plantillaParametros
-from MiProyecto.views import plantillaCargador
-from MiProyecto.views import plantillaShortCut
-from MiProyecto.views import plantillaHija1
-from MiProyecto.views import plantillaHija2
+from MiProyecto.views import TreinosPartidos
+from MiProyecto.views import coacheoEquipos
+from MiProyecto.views import main
 from django.conf import settings
 from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bienvenida/', bienvenida),
-    path('bienvenida2/', bienvenida2),
-    path('categoriaEdad/<int:edad>', categoriaEdad),
-    path('obtenerMomentoActual/', obtenerMomentoActual),
     path('contenidoHTML/<nombre>/<int:edad>', contenidoHTML),
-    path('miPrimerPlantilla/', miPrimerPlantilla),
-    path('plantillaParametros/', plantillaParametros),
-    path('plantillaCargador/', plantillaCargador),
-    path('plantillaShortCut/', plantillaShortCut),
-    path('plantillaHija1/', plantillaHija1),
-    path('plantillaHija2/', plantillaHija2)
+    path('TreinosPartidos/', TreinosPartidos),
+    path('coacheoEquipos/', coacheoEquipos),
+    path('',main)
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
